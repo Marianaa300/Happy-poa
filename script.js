@@ -95,129 +95,48 @@ document
 let contadorExecutado = false;
 
 function animarContador(id, valorFinal) {
-
     let valorAtual = 0;
+    
+    // Incremento decimal para animação suave
+    const incremento = valorFinal / 100; 
+    const elemento = document.getElementById(id);
 
-    const incremento =
-        Math.ceil(valorFinal / 100);
-
-    const elemento =
-        document.getElementById(id);
-
-    const timer =
-    setInterval(()=>{
-
+    const timer = setInterval(() => {
         valorAtual += incremento;
 
-        if(valorAtual >= valorFinal){
-
+        if (valorAtual >= valorFinal) {
             valorAtual = valorFinal;
-
             clearInterval(timer);
         }
 
-        elemento.innerText =
-            valorAtual.toLocaleString("pt-BR");
+        // Arredondamos apenas na hora de exibir na tela
+        elemento.innerText = Math.floor(valorAtual).toLocaleString("pt-BR");
 
-    },20);
+    }, 20); 
 }
 
-const numerosSection =
-document.querySelector("#numeros");
+// 👇 ESTA PARTE ESTAVA FALTANDO 👇
+const numerosSection = document.querySelector("#numeros");
 
-const observerContador =
-new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(
-            entry.isIntersecting &&
-            !contadorExecutado
-        ){
-
+const observerContador = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        // Se a seção apareceu na tela e o contador ainda não rodou
+        if (entry.isIntersecting && !contadorExecutado) {
             contadorExecutado = true;
-
-            animarContador(
-                "alunos",
-                80000
-            );
-
-            animarContador(
-                "cursos-num",
-                5
-            );
-
-            animarContador(
-                "anos",
-                8
-            );
-
+            
+            // Chama a função para cada número
+            animarContador("alunos", 80000);
+            animarContador("cursos-num", 5);
+            animarContador("anos", 11);
         }
-
     });
-
-},{
-    threshold:0.4
+}, {
+    threshold: 0.4 // Dispara quando 40% da seção estiver visível
 });
 
-if(numerosSection){
-
-    observerContador.observe(
-        numerosSection
-    );
-
+if (numerosSection) {
+    observerContador.observe(numerosSection);
 }
-
-/* ==========================
-   HEADER AO SCROLL
-========================== */
-
-window.addEventListener(
-    "scroll",
-    ()=>{
-
-        const header =
-        document.querySelector("header");
-
-        if(window.scrollY > 80){
-
-            header.classList.add(
-                "header-scroll"
-            );
-
-        }else{
-
-            header.classList.remove(
-                "header-scroll"
-            );
-        }
-
-    }
-);
-
-/* ==========================
-   EFEITO PARALLAX
-========================== */
-
-window.addEventListener(
-    "scroll",
-    ()=>{
-
-        const hero =
-        document.querySelector(".hero");
-
-        let scroll =
-        window.pageYOffset;
-
-        if(hero){
-
-            hero.style.backgroundPositionY =
-            scroll * 0.5 + "px";
-        }
-
-    }
-);
-
 /* ==========================
    HOVER 3D NOS CARDS
 ========================== */
