@@ -1,0 +1,578 @@
+:root{
+    --primary:#113A8F;
+    --primary-dark:#0B2E74;
+    --secondary:#2F6CC2;
+
+    --yellow:#F5B52E;
+    --green:#8CC63E;
+    --red:#E94B4B;
+
+    --dark:#1d1d1d;
+    --gray:#666;
+    --light:#f8f9fc;
+    --white:#ffffff;
+
+    --shadow:
+    0 10px 20px rgba(0,0,0,.08),
+    0 20px 40px rgba(0,0,0,.05);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(
+        180deg,
+        #f8f9fc,
+        #eef4ff
+    );
+
+    color:var(--dark);
+    overflow-x:hidden;
+    transition:.3s;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+section{
+    padding:100px 8%;
+}
+
+/* ==========================
+   ACESSIBILIDADE
+========================== */
+
+.acessibilidade{
+    position:fixed;
+    right:20px;
+    top:120px;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    z-index:9999;
+}
+
+.acessibilidade button{
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--primary);
+    color:white;
+
+    font-weight:700;
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.acessibilidade button:hover{
+    transform:scale(1.1);
+}
+
+.icones-acessibilidade{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+
+    color:var(--primary);
+    font-size:1.3rem;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:rgba(255,255,255,.90);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 3px 20px rgba(0,0,0,.05);
+
+    z-index:999;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo img{
+    width:60px;
+}
+
+.logo h1{
+    color:var(--primary);
+    font-size:2rem;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:var(--dark);
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+
+    left:0;
+    bottom:-5px;
+
+    width:0;
+    height:3px;
+
+    background:var(--primary);
+
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover{
+    color:var(--primary);
+}
+
+.menu-mobile{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background-image:url("wing.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
+    color:white;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.45)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:900px;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+}
+
+.hero h2{
+    font-size:4rem;
+    margin-bottom:20px;
+
+    text-shadow:
+    0 3px 10px rgba(0,0,0,.3);
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:35px;
+    line-height:1.8;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.primary,
+.secondary{
+
+    background:
+    linear-gradient(
+        90deg,
+        #0F9D58,
+        #34A853
+    );
+
+    color:white;
+}
+
+.btn:hover{
+    transform:
+    translateY(-5px)
+    scale(1.03);
+
+    filter:brightness(1.08);
+}
+
+/* ==========================
+   TITULOS
+========================== */
+
+.titulo{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.titulo h2{
+
+    font-size:3rem;
+
+    background:
+    linear-gradient(
+        90deg,
+        #113A8F,
+        #2F6CC2
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ==========================
+   SOBRE
+========================== */
+
+.sobre-container{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:60px;
+
+    flex-wrap:wrap;
+}
+
+.sobre-container img{
+
+    width:450px;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 20px 50px rgba(17,58,143,.25);
+
+    transition:.4s;
+}
+
+.sobre-container img:hover{
+    transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+.texto{
+    max-width:550px;
+}
+
+.texto h3{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.texto p{
+    color:var(--gray);
+    line-height:1.9;
+    margin-bottom:15px;
+}
+
+/* ==========================
+   ANIMAÇÃO SCROLL
+========================== */
+
+.fade-up{
+    opacity:0;
+    transform:translateY(50px);
+    transition:.8s;
+}
+
+.fade-up.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+
+/* ==========================
+   CONTAINER PRINCIPAL
+========================== */
+
+.galeria-container{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    width:100%;
+}
+
+/* scroll horizontal */
+.galeria-wrapper{
+    overflow-x:auto;
+    scroll-behavior:smooth;
+
+    width:100%;
+
+    padding:10px 0;
+}
+
+/* linha */
+.grid-galeria{
+    display:flex;
+    gap:20px;
+
+    width:max-content;
+}
+
+/* cards */
+.foto{
+    min-width:220px;
+    height:220px;
+
+    flex-shrink:0;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.foto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* overlay */
+.overlay{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:15px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.75)
+    );
+
+    color:#fff;
+
+    opacity:0;
+
+    transition:.3s;
+}
+
+.foto:hover .overlay{
+    opacity:1;
+}
+
+/* ==========================
+   SETAS CORRIGIDAS
+========================== */
+
+.seta{
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+
+    z-index:10;
+
+    transition:.3s;
+}
+
+.seta:hover{
+    transform:translateY(-50%) scale(1.1);
+}
+
+.esquerda{
+    left:10px;
+}
+
+.direita{
+    right:10px;
+}
+
+.foto img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.foto img[src*="DIAGRAMA-SITE"]{
+    object-fit:contain;
+    background:white;
+    padding:10px;
+}
+
+body.modo-calmo{
+    filter: grayscale(0.35) contrast(0.9) brightness(0.95);
+}
+
+body.modo-calmo *{
+    animation: none !important;
+    transition: none !important;
+}
+
+body.modo-calmo .hero-overlay{
+    background: rgba(0,0,0,.35) !important;
+}
+
+body.modo-calmo .card,
+body.modo-calmo .box{
+    box-shadow: none !important;
+}
+
+/* ==========================
+   WHATSAPP FLUTUANTE VERDE
+========================== */
+
+.whatsapp-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+
+    width:65px;
+    height:65px;
+
+    background:#25D366;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:white;
+    font-size:32px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    z-index:99999;
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.12);
+}
+
+/* descrição escondida */
+.card .desc{
+    display:none;
+    margin-top:10px;
+    font-size:0.95rem;
+    color:#555;
+    line-height:1.5;
+}
+
+/* quando ativo mostra */
+.card.ativo .desc{
+    display:block;
+}

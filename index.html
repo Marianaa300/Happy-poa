@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy - Escola de Habilidades</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a class="whatsapp-float"
+   href="https://wa.me/555139070101?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20cursos."
+   target="_blank"
+   title="Falar no WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+</a>
+   <div class="acessibilidade">
+
+    <button onclick="aumentarFonte()">A+</button>
+
+    <button onclick="diminuirFonte()">A-</button>
+
+    <button onclick="toggleModoCalmo()">🧘</button>
+
+   <div class="icones-acessibilidade">
+    <i class="fa-solid fa-wheelchair"></i>
+    
+</div>
+    </div>
+
+</div>
+
+    </div>
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="logo">
+            <img src="logohappy.png" alt="Logo Happy">
+            <h1>Happy</h1>
+        </div>
+
+        <nav id="menu">
+
+            <a href="#inicio">Início</a>
+
+            <a href="#sobre">Sobre</a>
+
+            <a href="#diferenciais">Diferenciais</a>
+
+            <a href="#cursos">Cursos</a>
+
+            <a href="#numeros">Resultados</a>
+
+            <a href="#galeria">Galeria</a>
+
+            <a href="#infos">Informações</a>
+
+        </nav>
+
+        <div class="menu-mobile" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <h2>Maior Escola de Habilidades do Brasil</h2>
+
+            <p>
+                Programação, Comunicação,
+                Educação Financeira e Inglês.
+                
+            </p>
+
+            <div class="buttons">
+
+                <a href="https://wa.me/555139070101?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20cursos."
+                    target="_blank"
+                    class="btn primary">
+
+                    Entrar em Contato
+
+                </a>
+
+                <a href="#cursos" class="btn secondary">
+
+                    Ver Cursos
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
+    <section class="sobre fade-up" id="sobre">
+
+        <div class="titulo">
+            <h2>Sobre a Happy</h2>
+        </div>
+
+        <div class="sobre-container">
+
+            <img src="sobreahappy.png" alt="Sobre a Happy">
+
+            <div class="texto">
+
+                <h3>Aprender pode ser divertido 🚀</h3>
+
+                <p>
+                    A Happy nasceu com a missão de transformar
+                    a educação em uma experiência divertida,
+                    criativa e tecnológica.
+                </p>
+
+                <p>
+                    Nossos alunos desenvolvem habilidades
+                    essenciais para o futuro através de
+                    metodologias modernas e projetos práticos.
+                </p>
+
+                <p>
+                    Aqui os estudantes aprendem programação, inglês,
+                    comunicação e educação financeira.
+                </p>
+
+                <p>
+                    Mais do que ensinar tecnologia,
+                    ajudamos crianças e adolescentes
+                    a desenvolver confiança, criatividade
+                    e pensamento crítico.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="diferenciais" id="diferenciais">
+
+        <div class="titulo">
+            <h2>Por que escolher a Happy?</h2>
+        </div>
+
+        <div class="cards">
+
+            <div class="card fade-up">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+
+                <h3>Metodologia Moderna</h3>
+
+                <p>
+                    Aprendizagem baseada em projetos reais
+                    e experiências práticas.
+                </p>
+
+            </div>
+
+            <div class="card fade-up">
+
+                <i class="fa-solid fa-chalkboard-user"></i>
+
+                <h3>Professores Especializados</h3>
+
+                <p>
+                    Equipe preparada para ensinar crianças
+                    e adolescentes de forma divertida.
+                </p>
+
+            </div>
+
+            <div class="card fade-up">
+
+                <i class="fa-solid fa-gamepad"></i>
+
+                <h3>Gamificação</h3>
+
+                <p>
+                    Aprender brincando aumenta o engajamento
+                    e a retenção do conteúdo.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CURSOS -->
+    <section class="cursos" id="cursos">
+
+        <div class="titulo">
+            <h2>Nossos Cursos</h2>
+        </div>
+
+        
+    <div class="cards">
+
+    <div class="card fade-up" onclick="toggleCurso(this)">
+        <i class="fa-solid fa-code"></i>
+        <h3>Programação</h3>
+        <p class="desc">HTML, CSS e JavaScript para criação de sites e projetos simples.</p>
+    </div>
+
+    <div class="card fade-up" onclick="toggleCurso(this)">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Educação Financeira</h3>
+        <p class="desc">Organização do dinheiro, noções de economia e planejamento básico.</p>
+    </div>
+
+    <div class="card fade-up" onclick="toggleCurso(this)">
+        <i class="fa-solid fa-comments"></i>
+        <h3>Comunicação</h3>
+        <p class="desc">Desenvolvimento da fala, expressão e confiança ao se comunicar.</p>
+    </div>
+
+    <div class="card fade-up" onclick="toggleCurso(this)">
+        <i class="fa-solid fa-earth-americas"></i>
+        <h3>Inglês</h3>
+        <p class="desc">Aprendizado básico para conversação e uso no dia a dia.</p>
+    </div>
+
+</div>
+
+
+        </div>
+
+    </section>
+
+    <!-- CONTADORES -->
+    <section class="numeros" id="numeros">
+
+        <div class="titulo">
+            <h2>Nossos Resultados</h2>
+        </div>
+
+        <div class="numeros-container">
+
+            <div class="numero">
+
+                <h3 id="alunos">0</h3>
+
+                <p>Alunos Impactados</p>
+
+            </div>
+
+            <div class="numero">
+
+                <h3 id="cursos-num">0</h3>
+
+                <p>Cursos Disponíveis</p>
+
+            </div>
+
+            <div class="numero">
+
+                <h3 id="anos">0</h3>
+
+                <p>Anos de Experiência</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALERIA -->
+    <section class="galeria" id="galeria">
+
+        <div class="titulo">
+            <h2>Galeria</h2>
+        </div>
+<div class="galeria-container">
+
+    <button class="seta esquerda" onclick="scrollGaleria(-1)">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="galeria-wrapper" id="galeriaWrapper">
+
+        <div class="grid-galeria">
+
+            <div class="foto">
+                <img src="7Rk8KFxQ.webp">
+                <div class="overlay">Ambiente Interno</div>
+            </div>
+
+            <div class="foto">
+                <img src="skates.jpg">
+                <div class="overlay">Espaços</div>
+            </div>
+
+            <div class="foto">
+                <img src="fotodentro.jpg">
+                <div class="overlay">Salas</div>
+            </div>
+
+            <div class="foto">
+                <img src="DIAGRAMA-SITE.png">
+                <div class="overlay">Metodologia</div>
+            </div>
+
+            <div class="foto">
+                <img src="sobreahappy.png">
+                <div class="overlay">Fachada</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="seta direita" onclick="scrollGaleria(1)">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+</div>
+        </div>
+
+    </div>
+
+    <button class="seta direita" onclick="scrollGaleria(1)">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+</div>
+
+    <!-- 1: escola por dentro -->
+
+
+</div>
+</div>
+
+    </section>
+
+    <!-- INFORMAÇÕES -->
+    <section class="infos" id="infos">
+
+        <div class="titulo">
+            <h2>Informações</h2>
+        </div>
+
+        <div class="info-container">
+
+            <div class="box fade-up">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>Endereço</h3>
+
+                <p>
+                    R. Mostardeiro, 939
+                    Porto Alegre - RS
+                </p>
+
+            </div>
+
+            <div class="box fade-up">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h3>Horários</h3>
+
+                <p>
+                    Segunda a Sábado<br>
+                    08:00 às 17:30
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- WHATSAPP -->
+    <a href="https://wa.me/555139070101?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20cursos."
+        target="_blank"
+        class="whatsapp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+    <script src="script.js"></script>
+
+    <div class="modal-curso" id="modalCurso">
+
+    <div class="modal-box">
+
+        <span class="fechar-modal" onclick="fecharCurso()">&times;</span>
+
+        <h2 id="tituloCurso">Curso</h2>
+
+        <p id="descricaoCurso"></p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
